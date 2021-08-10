@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Registration</title>
+</head>
+<body>
+  <div id="registration" class="d-flex justify-content-center align-items-center">
+    <div id="forms" class="col-7 shadow">
+      <div class="col-md-12 main-title text-center">
+        <h2>Smart Login System</h2>
+      </div>
+
+      <form id="signUpForm" class="py-3">
+        <div class="mb-3">
+          <input type="text" class="name form-control bg-transparent text-white" placeholder="Enter Your Name">
+          <p id="signUpNameAlert" class="text-center d-none text-white bg-danger">Name Must Be Incloud at lest 3 char and maxmum 10 char</p>
+          <p id="nameReqMSG" class="d-none text-center text-white bg-danger">Name Input Is Required</p>
+        </div>
+
+        <div class="mb-3">
+          <input type="email" class="mail form-control bg-transparent text-white"  placeholder="Enter Your E-mail">
+          <p id="signUpEmailAlert" class="text-center d-none text-white bg-danger">name@example.com</p>
+          <p id="emailReqMSG" class="d-none text-center text-white bg-danger">Email Input Is Required</p>
+        </div>
+
+        <div class="mb-3">
+          <input type="password" class="password form-control bg-transparent text-white"  placeholder="Enter Yout Password">
+          <p id="signUpPasswordAlert" class="text-center d-none text-white bg-danger">Your Password Mustn't be Less Than 8 But Must Be more than 15</p>
+          <p id="passReqMSG" class="d-none text-center text-white bg-danger">Password Input Is Required</p>
+        </div>
+
+        <div class="erorrMSG text-center">
+          <p id="successMSG" class="d-none text-success">Success</p>
+          <p id="existMSG" class="d-none text-white bg-danger">This Email Already Exist</p>
+          <p id="fillMSG" class="d-none text-white bg-danger">Fill Inputs correctly</p>
+        </div>
+
+        <div class="d-flex">
+          <p id="signUp" onclick="signUp()" class="m-auto btn btn-primary">SignUp</p>
+        </div>
+
+        <div>
+          <p class="text-white text-center">You have an account?<span id="goToSignIn" class="bg-transparent btn-info text-white">SignIn</span></p>
+        </div>
+      </form>
+
+      <form id="signInForm" class="py-3">
+        <div class="mb-3">
+          <input type="email" class="mail form-control bg-transparent text-white" placeholder="Enter Your E-mail">
+        </div>
+
+        <div class="mb-3">
+          <input type="password" class="password form-control bg-transparent text-white" placeholder="Enter Yout Password">
+        </div>
+
+        <div class="erorrMSG text-center">
+          <p id="filledMSG" class="d-none text-white bg-danger">All Inputs Must Be Filled Out</p>
+          <p id="notRightMSG" class="d-none text-white bg-danger">Email Or Password Not Right</p>
+        </div>
+
+        <div class="btn w-100">
+          <p id="signIn" onclick="signIn()" class="m-auto btn btn-outline-primary">SignIn</p>
+        </div>
+
+        <div>
+          <p class="text-white text-center">Creat New account?<span id="goToSignUp" class="bg-transparent btn-info text-white">SignUp</span></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/all.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- <script src="js/main2.js"></script> -->
+</body>
+</html>

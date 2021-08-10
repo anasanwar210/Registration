@@ -1,0 +1,98 @@
+/*
+====================================================================================================
+                                      Start Forms Style
+====================================================================================================
+*/
+
+  #registration {
+    background-color: #24353f;
+    height: 100vh;
+  }
+
+  #forms {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+
+  #forms .main-title h2 {
+    color: #1da2b8;
+    font-size: 2.8rem;
+  }
+
+  #signUpForm,
+  #signUpForm {
+    display: none;
+  }
+
+  #signUpForm :is(.password, .mail, .name),
+  #signInForm :is(.password, .mail) {
+    font-size: 1.3rem !important;
+  }
+
+  #correctlyMSG,
+  #filledMSG,
+  #successMSG
+  {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+
+  #goToSignIn,
+  #goToSignUp {
+    border: 0px;
+    cursor: pointer;
+  }
+
+  #goToSignIn:hover,
+  #goToSignUp:hover {
+    text-decoration: underline;
+    color: rgba(0, 0, 250, 0.637) !important;
+  }
+
+  #signup,
+  #signin {
+    font-size: 1.2rem;
+  }
+
+/*
+====================================================================================================
+                                      End Forms Style
+====================================================================================================
+*/
+
+/*
+====================================================================================================
+                                      Start Welcome Style
+====================================================================================================
+*/
+
+  #welcomePage{
+    height: 100vh;
+    background-color: #24353f;
+  }
+
+  #welcomePage .logo h1{
+    font-size: 2rem;
+  }
+
+  #header{
+    width: 40%;
+    height: 150px;
+    margin: 20% auto;
+  }
+
+  #header h2{
+    font-size: 3rem;
+  }
+
+/*
+====================================================================================================
+                                      End Welcome Style
+====================================================================================================
+*/
