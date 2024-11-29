@@ -8,6 +8,10 @@ let signInEmail = document.getElementById("signInEmail"),
   required = document.getElementById("required"),
   reqMsg = document.getElementById("reqMsg");
 
+  if(localStorage.getItem("currentUser") !== null){
+    location.replace("welcome.html")
+  }
+
 let signInDataContainer = [];
 if (localStorage.getItem("signUp") !== null) {
   signInDataContainer = JSON.parse(localStorage.getItem("signUp"));
@@ -19,9 +23,10 @@ signInBtn.addEventListener("click", function (e) {
   console.log(signInDataContainer);
   if (signInEmail.value == "" || signInPassword.value == "") {
     required.classList.remove("d-none");
+    toSignUp.classList.add("d-none");
   }
   if (signInEmail.value !== "" && signInPassword !== "") {
-    if ((localStorage.getItem("signUp") == null)) {
+    if (localStorage.getItem("signUp") == null) {
       toSignUp.classList.remove("d-none");
       required.classList.add("d-none");
     } else {
@@ -30,8 +35,12 @@ signInBtn.addEventListener("click", function (e) {
           signInEmail.value === signInDataContainer[i].signUpEmail &&
           signInPassword.value === signInDataContainer[i].signUpPassword
         ) {
-          localStorage.setItem("currentUser" , JSON.stringify(signInDataContainer[i]))
+          localStorage.setItem(
+            "currentUser",
+            JSON.stringify(signInDataContainer[i])
+          );
           console.log("Good");
+          location.replace("welcome.html");
           required.classList.add("d-none");
         }
       }
@@ -78,3 +87,16 @@ let passwordStatus;
     }
   });
 })();
+
+
+function toggleMode() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+  body.classList.toggle('light-mode');
+}
+
+// window.onload = function() {
+//   setTimeout(function() {
+//     document.getElementById('loading-screen').style.display = 'none';
+//   }, 2000);
+// }

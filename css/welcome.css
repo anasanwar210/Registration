@@ -1,0 +1,83 @@
+/* Global Styling */
+body {
+  background-color: #f7f7f7;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #6c5ce7;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+/* .info-btn{
+  width: 60% !important; 
+} */
+
+.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Search Section */
+.search-input {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 2px solid #6c5ce7;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #5a4bd8;
+  box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+}
+
+/* Cards Styling */
+.card {
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  object-fit: cover;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.card-img-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-img-overlay {
+  opacity: 1;
+}
+
+.meal-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-input {
+      width: 90%;
+  }
+}

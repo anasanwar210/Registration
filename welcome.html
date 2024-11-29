@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/welcome.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top animate__animated animate__fadeInDown">
+    <div class="container">
+      <div class="row w-100">
+        <div class="inner col-md-12 d-flex justify-content-between align-items-center">
+          <a class="navbar-brand font-weight-bold" href="#">Meals</a>
+          <div id="info-btn" class="col-md-3 gap-3 d-flex justify-content-between align-items-center">
+            <div class="col-md-9 gap-2 d-flex align-items-center text-center">
+              <img src="images/Bassem_Samra.png" alt="User" class="user-img">
+              <p class="user d-flex align-items-center flex-column text-white mb-0">
+                <span>Hi, <span class="userName">anasanwar210</span></span>
+              </p>
+            </div>
+            <button id="signOut" class="btn btn-danger btn-sm"><i class="fa-solid fa-sign-out"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5 pt-5">
+    <!-- Search Section -->
+    <div class="text-center my-4" data-aos="fade-up">
+      <input type="text" class="form-control mb-3 search-input" placeholder="Search for meals...">
+      <button class="btn btn-primary btn-lg">Submit</button>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="row">
+      <!-- Card Template -->
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn" data-aos="fade-up" id="meal-card">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/post-1.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <!-- Duplicate the card 10 times -->
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/post-2.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/post-3.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/work-1.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/work-2.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/work-3.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/work-4.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/work-5.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
+        <div class="card">
+          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+            <h5 class="text-white meal-name">Meal Name</h5>
+          </div>
+          <img src="images/work-6.jpg" class="card-img-top" alt="Meal">
+        </div>
+      </div>
+      <!-- Repeat above code for other cards -->
+    </div>
+  </div>
+
+  <script src="js/all.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/welcome.js"></script>
+</body>
+
+</html>

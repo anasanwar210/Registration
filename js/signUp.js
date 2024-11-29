@@ -24,6 +24,8 @@ let signUpToggle = document.getElementById("signUpToggle"),
   success = document.getElementById("success"),
   signUpErrorMsgId = ``;
 
+signUpName.disabled = true;
+
 /* 
 =============================================
 - Toggle Button { Sign-In & Sign-Up }
@@ -75,6 +77,32 @@ signUpBtn.addEventListener("click", function (e) {
       signUpName: signUpName.value,
       signUpPassword: signUpPassword.value,
     };
+    let isExist = signUpDataContainer.some(
+      (data) => data.signUpEmail === signUpData.signUpEmail
+    );
+    if (isExist) {
+      signUpEmail.classList.add("is-invalid")
+      Swal.fire({
+        title: "Your E-mail Is Already Exist",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `,
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `,
+        },
+      });
+      return;
+    }
+    signUpEmail.classList.remove("is-invalid")
+    signUpEmail.classList.add("is-valid")
     signUpDataContainer.push(signUpData);
     localStorage.setItem("signUp", JSON.stringify(signUpDataContainer));
     success.classList.remove("d-none");
@@ -129,7 +157,7 @@ signupInputs.forEach((input) => {
 
 function validateInputs(input, signUpErrorMsgId) {
   let re = {
-    signUpEmail: /^[A-z0-9._%+-]+@[A-z0-9.-]+\.[a-z]{2,12}$/,
+    signUpEmail: /^[A-z0-9._%+-]{10,15}@[A-z0-9.-]+\.[a-z]{2,12}$/,
     signUpName: /[A-z]{5,15}/,
     signUpPassword: /^(?=.*[A-Za-z0-9]).{8,16}$/,
   };
