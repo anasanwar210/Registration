@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "poppins";
+  src: url(../css/fonts/Poppins-Regular.ttf);
+}
+body {
+  background-color: #eaf7f7;
+  font-family: "Poppins";
+  height: 100vh;
+}
+
+.form-wrapper {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #d7f2f2;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #006d77;
+  font-weight: bold;
+}
+
+.toggle-btn:hover {
+  background-color: #94dada;
+  color: #004f54;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.signActive {
+  background-color: #94dada;
+  color: white;
+}
+
+h2 {
+  color: #006d77;
+  font-weight: 600;
+}
+
+label {
+  color: #555;
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: #006d77;
+  border: none;
+  color: white;
+}
+
+.btn-success {
+  background-color: #83c5be;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  opacity: 0.9;
+}
+
+#signUpEmailValidateMsg {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100%;
+  width: 45%;
+  margin-right: 15px;
+}
+
+#signUpEmailValidateMsg::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  margin-left: 5px;
+  border-top: 10px transparent solid;
+  border-bottom: 10px transparent solid;
+  border-left: 10px #006d77 solid;
+  border-right: 10px transparent solid;
+}
+
+#eye {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3%;
+  cursor: pointer;
+  /* color: white;
+ background-color: black; */
+  border-radius: 6px;
+}

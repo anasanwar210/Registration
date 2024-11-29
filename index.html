@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/JavaScript-logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Registration</title>
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-7 m-auto">
+        <div class="form-wrapper">
+          <!-- 
+          =============================================
+          - Toggle Button { Sign-In & Sign-Up }
+          =============================================
+          -->
+          <input type="radio" name="toggle" id="signin-toggle" checked>
+          <input type="radio" name="toggle" id="signup-toggle">
+          <div class="toggle-buttons text-center mb-4">
+            <label id="signInToggle" for="signin-toggle" class="toggle-btn">Sign In</label>
+            <label id="signUpToggle" for="signup-toggle" class="toggle-btn">Sign Up</label>
+          </div>
+
+          <!-- 
+          =============================================
+          - Sign-In
+          =============================================
+          -->
+
+          <div class="form-content" id="signIn">
+            <h2 class="text-center mb-4">Sign In</h2>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="signInEmail" placeholder="name@example.com">
+              <label for="signInEmail">Email address</label>
+              <p id="reqMsg" class="alert alert-danger d-none h5 text-center">Required Filed</p>
+              <p id="signInEmailErrorMsg" class="alert alert-danger d-none h5 text-center">ع-الدوغري انا دورت بس ملقتهوش</p>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control position-relative" id="signInPassword" placeholder="Password">
+              <label for="signInPassword">Password</label>
+              <!-- <i id="eye" class="fa-solid fa-eye position-absolute"></i> -->
+              <p id="signInPasswordErrorMsg" class="alert alert-danger d-none h5 text-center">لا تقولي كاني ولا ماني ...
+                باسوردك مالوش بديل تاني</p>
+            </div>
+            <p id="required" class="alert alert-danger d-none">Inputs Can't Be Empty</p>
+            <p id="toSignUp" class="alert alert-danger d-none h5 text-center">سجل الاول ياعسليه</p>
+            <button id="signInBtn" class="btn btn-primary w-100">Sign In</button>
+          </div>
+
+          <!-- 
+          =============================================
+          - Sign-Up
+          =============================================
+          -->
+
+          <div class="signUp form-content d-none" id="signUp">
+            <h2 class="text-center mb-4">Sign Up</h2>
+            <div class="form-floating mb-3 position-relative">
+              <input type="email" class="form-control" id="signUpEmail" placeholder="name@example.com">
+              <label for="signUpEmail">Email address</label>
+              <p id="signUpEmailValidateMsg"
+                class="signUpEmailValidate signUpValidate d-none alert alert-info position-absolute">name@example.com
+              </p>
+              <p id="emailExist" class="d-none lead alert alert-danger">This Email Already Exist</p>
+              <p id="signUpEmailErrorMsg" class="alert alert-danger d-none">example: anasanwar210@gmail.com</p>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="signUpName" placeholder="Enter Your Name">
+              <label for="signUpName">User Name</label>
+              <p id="signUpEmailValidateMsg"
+                class="signUpNameValidate signUpValidate d-none alert alert-info position-absolute">Your friends can
+                reach you through this name.</p>
+              <p id="nameExist" class="d-none lead alert alert-danger">This Username Already Exist</p>
+              <p id="signUpNameErrorMsg" class="alert alert-danger d-none">It must be unique.</p>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+              <label for="signUpPassword">Password</label>
+              <p id="signUpEmailValidateMsg"
+                class="signUpPasswordValidate signUpValidate d-none alert alert-info position-absolute">Two lowercase
+                letters, two uppercase letters, a symbol and numbers</p>
+              <p id="signUpPasswordErrorMsg" class="alert alert-danger d-none">example: AaAa@123 , AAaa@123 , ...</p>
+            </div>
+            <p id="success" class="lead fw-bold text-success text-center rounded-3 d-none">عبي يابا
+            </p>
+            <button id="signUpBtn" class="btn btn-success w-100">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/all.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/signUp.js"></script>
+</body>
+
+</html>
