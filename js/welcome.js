@@ -19,7 +19,6 @@ signOut.addEventListener("click", function () {
   localStorage.removeItem("currentUser");
 });
 
-
 let stat;
 
 if (localStorage.getItem("darkMood") !== null) {
