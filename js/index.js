@@ -24,7 +24,6 @@ let signInDataContainer = [],
 if (localStorage.getItem("signUp") !== null) {
   signInDataContainer = JSON.parse(localStorage.getItem("signUp"));
 } else {
-  
   localStatus = false;
 }
 
@@ -42,7 +41,7 @@ signInBtn.addEventListener("click", function (e) {
     signInEmail.value = null;
     signInPassword.value = null;
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    location.assign("welcome.html");
+    location.replace("welcome.html");
   }
 
   if (localStatus == false) {
