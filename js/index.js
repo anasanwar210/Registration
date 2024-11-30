@@ -24,6 +24,7 @@ let signInDataContainer = [],
 if (localStorage.getItem("signUp") !== null) {
   signInDataContainer = JSON.parse(localStorage.getItem("signUp"));
 } else {
+  
   localStatus = false;
 }
 
