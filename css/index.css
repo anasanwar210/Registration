@@ -227,7 +227,6 @@ label {
 body.dark-mode .sun {
   opacity: 0;
   transform: translateX(-20px);
-  
 }
 
 body.dark-mode .moon {
