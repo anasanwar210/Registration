@@ -11,8 +11,7 @@ let signInEmail = document.getElementById("signInEmail"),
 let currPath = location.pathname;
 
 if (
-  localStorage.getItem("currentUser") &&
-  !currPath.endsWith("/welcome.html")
+  localStorage.getItem("currentUser")
 ) {
   location.assign("welcome.html");
   console.log("Go to welcome");
