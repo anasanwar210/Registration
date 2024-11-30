@@ -42,7 +42,7 @@ signInBtn.addEventListener("click", function (e) {
     signInEmail.value = null;
     signInPassword.value = null;
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    location.href = "/welcome.html";
+    location.href = "Registration/welcome.html";
   }
 
   if (localStatus == false) {
