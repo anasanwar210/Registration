@@ -10,10 +10,11 @@ if (localStorage.getItem("currentUser")) {
   ).name;
 }
 
-if (localStorage.getItem("currentUser") == null) {
-  location.replace("index.html");
+let pathInWelcome = location.pathname;
+if (pathInWelcome.endsWith("/welcome.html") && localStorage.getItem("currentUser") === null) {
+  location.assign("index.html");
+  console.log("Stay in index");
 }
-
 signOut.addEventListener("click", function () {
   location.replace("index.html");
   localStorage.removeItem("currentUser");

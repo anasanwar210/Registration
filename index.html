@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/media.css">
   <title>Registration | Log-In</title>
 </head>
 
@@ -25,7 +26,7 @@
 
   <div class="container py-5">
     <div class="row">
-      <div class="col-md-7 m-auto">
+      <div class="col-md-9 col-lg-7 m-auto">
         <div class="form-wrapper shadow-lg bg-white">
           <!-- 
           =============================================
@@ -51,18 +52,16 @@
               <input type="email" class="form-control" id="signInEmail" placeholder="name@example.com">
               <label for="signInEmail">Email address</label>
               <p id="reqMsg" class="alert alert-danger d-none h5 text-center">Required Filed</p>
-              <p id="signInEmailErrorMsg" class="alert alert-danger d-none h5 text-center">ع-الدوغري انا دورت بس ملقتهوش
-              </p>
+              <p id="signInEmailErrorMsg" class="alert alert-danger d-none h5 text-center">Incorrect Email</p>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control position-relative" id="signInPassword" placeholder="Password">
               <label for="signInPassword">Password</label>
               <!-- <i id="eye" class="fa-solid fa-eye position-absolute"></i> -->
-              <p id="signInPasswordErrorMsg" class="alert alert-danger d-none h5 text-center">لا تقولي كاني ولا ماني ...
-                باسوردك مالوش بديل تاني</p>
+              <p id="signInPasswordErrorMsg" class="alert alert-danger d-none h5 text-center">Incorrect Password</p>
             </div>
             <p id="required" class="alert alert-danger d-none h5 text-center">Inputs Can't Be Empty</p>
-            <p id="toSignUp" class="alert alert-danger d-none h5 text-center">اعمل sign-up الاول يا عسليه</p>
+            <p id="toSignUp" class="alert alert-danger d-none h5 text-center">Go To SignUp First</p>
             <button id="signInBtn" class="btn btn-primary text-white w-100">Sign In</button>
           </div>
 
@@ -72,7 +71,7 @@
           =============================================
           -->
 
-          <div class="signUp form-content d-none" id="signUp">
+          <div class="signUp form-content d-none " id="signUp">
             <!-- <h2 class="text-center mb-4">Sign Up</h2> -->
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="signUpName">
@@ -100,8 +99,7 @@
                 letters,<br> two uppercase letters,<br> a symbol and numbers</p>
               <p id="signUpPasswordErrorMsg" class="alert alert-danger d-none">example: AaAa@123 , AAaa@123 , ...</p>
             </div>
-            <p id="success" class="lead fw-bold text-success text-center rounded-3 d-none">عبي يابا
-            </p>
+            <p id="success" class="lead fw-bold text-success text-center rounded-3 d-none">Success</p>
             <button id="signUpBtn" class="btn text-white btn-success w-100">Sign Up</button>
           </div>
         </div>

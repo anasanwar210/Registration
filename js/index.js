@@ -8,11 +8,14 @@ let signInEmail = document.getElementById("signInEmail"),
   required = document.getElementById("required"),
   reqMsg = document.getElementById("reqMsg");
 
-if (localStorage.getItem("currentUser") !== null) {
-  location.replace("welcome.html");
-} else {
-  location.replace("index.html");
+
+let currPath = location.pathname;
+
+if (localStorage.getItem("currentUser") && !currPath.endsWith("/welcome.html")) {
+  location.assign("welcome.html");
+  console.log("Go to welcome");
 }
+
 let signInDataContainer = [],
   localStatus,
   currentUser;
@@ -37,7 +40,7 @@ signInBtn.addEventListener("click", function (e) {
     signInEmail.value = null;
     signInPassword.value = null;
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    location.replace("welcome.html");
+    location.pathname = "welcome.html";
   }
 
   if (localStatus == false) {
