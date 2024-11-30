@@ -8,95 +8,104 @@ let signInEmail = document.getElementById("signInEmail"),
   required = document.getElementById("required"),
   reqMsg = document.getElementById("reqMsg");
 
-  if(localStorage.getItem("currentUser") !== null){
-    location.replace("welcome.html")
-  }
+if (localStorage.getItem("currentUser") !== null) {
+  location.replace("welcome.html");
+} else {
+  location.replace("index.html");
+}
+let signInDataContainer = [],
+  localStatus,
+  currentUser;
 
-let signInDataContainer = [];
 if (localStorage.getItem("signUp") !== null) {
   signInDataContainer = JSON.parse(localStorage.getItem("signUp"));
+} else {
+  localStatus = false;
 }
 
 signInBtn.addEventListener("click", function (e) {
-  console.log(signInEmail.value);
-  console.log(signInPassword.value);
-  console.log(signInDataContainer);
-  if (signInEmail.value == "" || signInPassword.value == "") {
+  if (!signInEmail.value || !signInPassword.value) {
     required.classList.remove("d-none");
     toSignUp.classList.add("d-none");
+    signInPasswordErrorMsg.classList.add("d-none");
+    signInPassword.classList.remove("is-invalid");
   }
-  if (signInEmail.value !== "" && signInPassword !== "") {
-    if (localStorage.getItem("signUp") == null) {
-      toSignUp.classList.remove("d-none");
+
+  if (passwordStatus && emailStatus) {
+    signInEmail.classList.remove("is-valid");
+    signInPassword.classList.remove("is-valid");
+    signInEmail.value = null;
+    signInPassword.value = null;
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    location.replace("welcome.html");
+  }
+
+  if (localStatus == false) {
+    if (!signInEmail.value || !signInPassword.value) {
+      required.classList.remove("d-none");
+      toSignUp.classList.add("d-none");
+    } else if (signInEmail !== "" && signInPassword !== "") {
       required.classList.add("d-none");
-    } else {
-      for (let i = 0; i < signInDataContainer.length; i++) {
-        if (
-          signInEmail.value === signInDataContainer[i].signUpEmail &&
-          signInPassword.value === signInDataContainer[i].signUpPassword
-        ) {
-          localStorage.setItem(
-            "currentUser",
-            JSON.stringify(signInDataContainer[i])
-          );
-          console.log("Good");
-          location.replace("welcome.html");
-          required.classList.add("d-none");
-        }
-      }
+      toSignUp.classList.remove("d-none");
     }
   }
-  console.log(signInDataContainer);
 });
 
 let emailStatus;
-(function email() {
-  signInEmail.addEventListener("blur", function () {
-    for (let i = 0; i < signInDataContainer.length; i++) {
-      if (
-        this.value !== signInDataContainer[i].signUpEmail &&
-        this.value !== ""
-      ) {
-        toSignUp.classList.add("d-none");
-        signInEmailErrorMsg.classList.remove("d-none");
-        reqMsg.classList.add("d-none");
-      } else if (this.value === signInDataContainer[i].signUpEmail) {
-        toSignUp.classList.add("d-none");
-        signInEmailErrorMsg.classList.add("d-none");
-        reqMsg.classList.add("d-none");
-      }
+signInEmail.addEventListener("blur", function () {
+  emailStatus = false;
+
+  if (localStatus === false) {
+    signInEmailErrorMsg.classList.add("d-none");
+    return;
+  }
+
+  if (!signInEmail.value) {
+    signInEmailErrorMsg.classList.add("d-none");
+    signInEmail.classList.remove("is-invalid");
+    signInEmail.classList.remove("is-valid");
+    emailStatus = false;
+    return;
+  }
+
+  for (let i = 0; i < signInDataContainer.length; i++) {
+    if (signInEmail.value === signInDataContainer[i].email) {
+      signInEmailErrorMsg.classList.add("d-none");
+      signInEmail.classList.add("is-valid");
+      signInEmail.classList.remove("is-invalid");
+      emailStatus = true;
+      currentUser = signInDataContainer[i];
+      break;
     }
-  });
-})();
+  }
+
+  if (!emailStatus) {
+    signInEmailErrorMsg.classList.remove("d-none");
+    signInEmail.classList.add("is-invalid");
+    signInEmail.classList.remove("is-valid");
+    emailStatus = false;
+  }
+});
 
 let passwordStatus;
-(function password() {
-  signInPassword.addEventListener("blur", function () {
-    if (signInEmail.value === "") {
-      return reqMsg.classList.remove("d-none");
+signInPassword.addEventListener("blur", function () {
+  console.log(currentUser);
+  if (currentUser !== undefined) {
+    if (signInPassword.value === currentUser.password) {
+      signInPasswordErrorMsg.classList.add("d-none");
+      signInPassword.classList.remove("is-invalid");
+      signInPassword.classList.add("is-valid");
+      passwordStatus = true;
+    } else if (signInPassword.value !== currentUser.password) {
+      signInPasswordErrorMsg.classList.remove("d-none");
+      signInPassword.classList.add("is-invalid");
+      signInPassword.classList.remove("is-valid");
+      passwordStatus = false;
     }
-    for (let i = 0; i < signInDataContainer.length; i++) {
-      if (
-        this.value !== "" &&
-        this.value !== signInDataContainer[i].signUpPassword
-      ) {
-        toSignUp.classList.add("d-none");
-        signInPasswordErrorMsg.classList.remove("d-none");
-      } else if (this.value === signInDataContainer[i].signUpPassword)
-        signInPasswordErrorMsg.classList.add("d-none");
-    }
-  });
-})();
-
+  }
+});
 
 function toggleMode() {
-  const body = document.body;
-  body.classList.toggle('dark-mode');
-  body.classList.toggle('light-mode');
+  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("light-mode");
 }
-
-// window.onload = function() {
-//   setTimeout(function() {
-//     document.getElementById('loading-screen').style.display = 'none';
-//   }, 2000);
-// }

@@ -1,6 +1,6 @@
 /* Global Styling */
 body {
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7; */
   font-family: 'Arial', sans-serif;
 }
 
@@ -13,10 +13,6 @@ body {
 .navbar-brand {
   font-size: 24px;
 }
-
-/* .info-btn{
-  width: 60% !important; 
-} */
 
 .user-img {
   width: 40px;
@@ -79,5 +75,85 @@ body {
 @media (max-width: 768px) {
   .search-input {
       width: 90%;
+  }
+}
+
+/* Default: Show Sun and Hide Moon */
+.sun {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.moon {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+/* Dark Mode: Show Moon and Hide Sun */
+body.dark-mode .sun {
+  opacity: 0;
+  transform: translateX(-20px);
+  
+}
+
+body.dark-mode .moon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 
+==================================
+*/
+
+#loading-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  animation: fideOut 1s linear;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fideOut {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+    display: block;
+  }
+  25% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+    display: none;
   }
 }

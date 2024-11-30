@@ -26,17 +26,22 @@ let signUpToggle = document.getElementById("signUpToggle"),
 
 signUpName.disabled = true;
 
+let toggle = document.querySelector(".toggle");
+
 /* 
 =============================================
 - Toggle Button { Sign-In & Sign-Up }
 =============================================
 */
-
+signInToggle.style.scale = "1.2";
 signInToggle.addEventListener("click", function () {
   signInForm.classList.remove("d-none");
   signUpForm.classList.add("d-none");
   signUpToggle.classList.remove("signActive");
   this.classList.add("signActive");
+  this.style.scale = "1.2";
+  signUpToggle.style.scale = "1";
+  document.title = "Registration | Sign-In";
 });
 
 signUpToggle.addEventListener("click", function () {
@@ -44,6 +49,39 @@ signUpToggle.addEventListener("click", function () {
   signUpForm.classList.remove("d-none");
   signInToggle.classList.remove("signActive");
   this.classList.add("signActive");
+  this.style.scale = "1.2";
+  signInToggle.style.scale = "1";
+  document.title = "Registration | Sign-Up";
+});
+let stat;
+
+if (localStorage.getItem("darkMood") !== null) {
+  stat = JSON.parse(localStorage.getItem("darkMood"));
+  if (stat == true) {
+    document.querySelector(".sun").style.cssText = `
+    opacity: 0;
+    transform: translateX(-20px);
+      `;
+    document.querySelector(".moon").style.cssText = `
+    opacity: 1;
+    transform: translateX(0);
+            `;
+    document.documentElement.setAttribute("data-bs-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-bs-theme", "light");
+  }
+} else {
+  document.documentElement.setAttribute("data-bs-theme", "light");
+}
+
+toggle.addEventListener("click", function (e) {
+  stat = toggle.classList.toggle("true");
+  localStorage.setItem("darkMood", JSON.stringify(stat));
+  if (stat == true) {
+    document.documentElement.setAttribute("data-bs-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-bs-theme", "light");
+  }
 });
 
 /*
@@ -73,15 +111,15 @@ signUpBtn.addEventListener("click", function (e) {
     )
   ) {
     let signUpData = {
-      signUpEmail: signUpEmail.value,
-      signUpName: signUpName.value,
-      signUpPassword: signUpPassword.value,
+      email: signUpEmail.value,
+      name: signUpName.value,
+      password: signUpPassword.value,
     };
     let isExist = signUpDataContainer.some(
-      (data) => data.signUpEmail === signUpData.signUpEmail
+      (data) => data.email === signUpData.email
     );
     if (isExist) {
-      signUpEmail.classList.add("is-invalid")
+      signUpEmail.classList.add("is-invalid");
       Swal.fire({
         title: "Your E-mail Is Already Exist",
         showClass: {
@@ -101,14 +139,14 @@ signUpBtn.addEventListener("click", function (e) {
       });
       return;
     }
-    signUpEmail.classList.remove("is-invalid")
-    signUpEmail.classList.add("is-valid")
+    signUpEmail.classList.remove("is-invalid");
+    signUpEmail.classList.add("is-valid");
     signUpDataContainer.push(signUpData);
     localStorage.setItem("signUp", JSON.stringify(signUpDataContainer));
     success.classList.remove("d-none");
     setTimeout(() => {
       location.reload();
-    }, 3000);
+    }, 1500);
     clearInputs("signUp");
   }
 });
@@ -122,9 +160,6 @@ function clearInputs(param) {
     signUpEmail.classList.remove("is-valid");
     signUpName.classList.remove("is-valid");
     signUpPassword.classList.remove("is-valid");
-  } else if (param === "signIn") {
-    signInEmail = null;
-    signInPassword = null;
   }
 }
 
@@ -185,6 +220,6 @@ signUpEmail.addEventListener("blur", function (e) {
     )
   ) {
     let str = signUpEmail.value;
-    signUpName.value = str.slice(0, str.indexOf("@"));
+    signUpName.value = `@${str.slice(0, str.indexOf("@"))}`;
   }
 });

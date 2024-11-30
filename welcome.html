@@ -4,21 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome Page</title>
   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"> -->
+  <link rel="shortcut icon" href="images/hero-img.png" type="image/x-icon">
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/welcome.css">
+  <title>Meals</title>
 </head>
 
 <body>
+  <div id="loading-screen">
+    <span class="spinner"></span>
+</div>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top animate__animated animate__fadeInDown">
+
     <div class="container">
       <div class="row w-100">
         <div class="inner col-md-12 d-flex justify-content-between align-items-center">
           <a class="navbar-brand font-weight-bold" href="#">Meals</a>
+          <div class="toggle-container overflow-hidden">
+            <div class="toggle bg-dark rounded px-2" onclick="toggleMode()">
+              <span class="icon sun"><i class="fa-regular fa-moon text-warning"></i></span>
+              <span class="icon moon"><i class="fa-solid fa-sun text-warning"></i></span>
+            </div>
+          </div>
           <div id="info-btn" class="col-md-3 gap-3 d-flex justify-content-between align-items-center">
             <div class="col-md-9 gap-2 d-flex align-items-center text-center">
               <img src="images/Bassem_Samra.png" alt="User" class="user-img">
@@ -37,7 +48,7 @@
   <div class="container mt-5 pt-5">
     <!-- Search Section -->
     <div class="text-center my-4" data-aos="fade-up">
-      <input type="text" class="form-control mb-3 search-input" placeholder="Search for meals...">
+      <input type="search" class="form-control mb-3 search-input" placeholder="Search for meals...">
       <button class="btn btn-primary btn-lg">Submit</button>
     </div>
 

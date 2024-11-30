@@ -4,29 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="images/JavaScript-logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/hero-img.png" type="image/x-icon">
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
-  <title>Registration</title>
+  <title>Registration | Log-In</title>
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
-  <div class="toggle-container">
-    <div class="toggle bg-black" onclick="toggleMode()">
-      <span class="icon sun"><i class="fa-regular fa-sun text-warning"></i></span>
-      <span class="icon moon"><i class="fa-solid fa-moon text-warning"></i></span>
+  <div class="toggle-container overflow-hidden">
+    <div class="toggle bg-success" onclick="toggleMode()">
+      <span class="icon sun"><i class="fa-regular fa-moon text-warning"></i></span>
+      <span class="icon moon"><i class="fa-solid fa-sun text-warning"></i></span>
     </div>
   </div>
 
   <div id="loading-screen">
-      <span class="spinner"></span>
+    <span class="spinner"></span>
   </div>
 
   <div class="container py-5">
     <div class="row">
       <div class="col-md-7 m-auto">
-        <div class="form-wrapper">
+        <div class="form-wrapper shadow-lg bg-white">
           <!-- 
           =============================================
           - Toggle Button { Sign-In & Sign-Up }
@@ -46,7 +46,7 @@
           -->
 
           <div class="form-content" id="signIn">
-            <h2 class="text-center mb-4">Sign In</h2>
+            <!-- <h2 class="text-center mb-4">Sign In</h2> -->
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="signInEmail" placeholder="name@example.com">
               <label for="signInEmail">Email address</label>
@@ -62,8 +62,8 @@
                 باسوردك مالوش بديل تاني</p>
             </div>
             <p id="required" class="alert alert-danger d-none h5 text-center">Inputs Can't Be Empty</p>
-            <p id="toSignUp" class="alert alert-danger d-none h5 text-center">سجل الاول ياعسليه</p>
-            <button id="signInBtn" class="btn btn-primary w-100">Sign In</button>
+            <p id="toSignUp" class="alert alert-danger d-none h5 text-center">اعمل sign-up الاول يا عسليه</p>
+            <button id="signInBtn" class="btn btn-primary text-white w-100">Sign In</button>
           </div>
 
           <!-- 
@@ -73,7 +73,7 @@
           -->
 
           <div class="signUp form-content d-none" id="signUp">
-            <h2 class="text-center mb-4">Sign Up</h2>
+            <!-- <h2 class="text-center mb-4">Sign Up</h2> -->
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="signUpName">
               <label for="signUpName">User Name</label>
@@ -97,12 +97,12 @@
               <label for="signUpPassword">Password</label>
               <p id="signUpEmailValidateMsg"
                 class="signUpPasswordValidate signUpValidate d-none alert alert-info position-absolute">Two lowercase
-                letters, two uppercase letters, a symbol and numbers</p>
+                letters,<br> two uppercase letters,<br> a symbol and numbers</p>
               <p id="signUpPasswordErrorMsg" class="alert alert-danger d-none">example: AaAa@123 , AAaa@123 , ...</p>
             </div>
             <p id="success" class="lead fw-bold text-success text-center rounded-3 d-none">عبي يابا
             </p>
-            <button id="signUpBtn" class="btn btn-success w-100">Sign Up</button>
+            <button id="signUpBtn" class="btn text-white btn-success w-100">Sign Up</button>
           </div>
         </div>
       </div>
