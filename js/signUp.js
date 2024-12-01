@@ -192,7 +192,7 @@ signupInputs.forEach((input) => {
 
 function validateInputs(input, signUpErrorMsgId) {
   let re = {
-    signUpEmail: /^[A-z0-9._%+-]{5,15}@[A-z0-9.-]+\.[a-z]{2,12}$/,
+    signUpEmail: /^[a-z0-9._%+-]{5,15}@[a-z0-9.-]+\.[a-z]{2,12}$/,
     signUpName: /[A-z]{5,15}/,
     signUpPassword: /^(?=.*[A-Za-z0-9]).{8,16}$/,
   };
