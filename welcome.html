@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="images/hero-img.png" type="image/x-icon">
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,7 +17,6 @@
     <span class="spinner"></span>
 </div>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top animate__animated animate__fadeInDown">
 
     <div class="container">
@@ -44,96 +43,26 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
   <div class="container mt-5 pt-5">
-    <!-- Search Section -->
     <div class="text-center my-4" data-aos="fade-up">
       <input type="search" class="form-control mb-3 search-input" placeholder="Search for meals...">
       <button class="btn btn-primary btn-lg">Submit</button>
     </div>
 
-    <!-- Cards Section -->
-    <div class="row">
-      <!-- Card Template -->
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn" data-aos="fade-up" id="meal-card">
+    <div id="mealContainer" class="row">
+      <!-- <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn" data-aos="fade-up" id="meal-card">
         <div class="card">
           <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
+            <h5 id="mealName" class="text-white meal-name">Meal Name</h5>
           </div>
-          <img src="images/post-1.jpg" class="card-img-top" alt="Meal">
+          <img id="mealImage" src="images/post-1.jpg" class="card-img-top" alt="Meal">
         </div>
-      </div>
-      <!-- Duplicate the card 10 times -->
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/post-2.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/post-3.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/work-1.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/work-2.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/work-3.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/work-4.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/work-5.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img src="images/work-6.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div>
-      <!-- Repeat above code for other cards -->
+      </div> -->
     </div>
   </div>
 
   <script src="js/all.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/welcome.js"></script>
 </body>
