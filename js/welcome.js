@@ -59,35 +59,199 @@ function toggleMode() {
 
 /*
 ==================================
-  - Get Data From Api
+- Get Meals From Api
 ==================================
 */
-let cartona = ``;
-let myReq = new XMLHttpRequest();
-myReq.open("GET", "https://forkify-api.herokuapp.com/api/search?q=corn");
-myReq.onload = function () {
-  if (myReq.status === 200) {
-    let meals = JSON.parse(myReq.response);
-    displayMeals(meals);
-    console.log(meals.recipes);
-  } else {
-    console.log(`Error ${myReq.status}, ${myReq.statusText}`);
-  }
-};
-myReq.send();
 
-function displayMeals(meals) {
-  for (let i = 0; i < meals.recipes.length; i++) {
-    cartona += `
-        <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn" data-aos="fade-up" id="meal-card">
-      <div class="card">
-        <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-          <h5 class="text-white meal-name">${meals.recipes[i].publisher}</h5>
-        </div>
-        <img src="${meals.recipes[i].image_url}" class="card-img-top" alt="Meal">
-      </div>
-    </div>
-  `;
-  }
-  document.getElementById("mealContainer").innerHTML = cartona;
+getAllMeals("pizza");
+
+function getAllMeals(term) {
+  let myReq = new XMLHttpRequest();
+  myReq.open("GET", `https://forkify-api.herokuapp.com/api/search?q=${term}`);
+  myReq.send();
+  myReq.onload = function () {
+    if (myReq.status === 200) {
+      let meals = JSON.parse(myReq.response);
+      displayMeals(meals);
+      console.log(meals.recipes);
+    } else {
+      console.log(`Error: ${myReq.status}, ${myReq.statusText}`);
+    }
+  };
 }
+
+/*
+==================================
+- Display Meals
+==================================
+*/
+function displayMeals(meals) {
+  let mealContainer = document.getElementById("mealContainer"),
+    container = ``;
+  for (let i = 0; i < meals.recipes.length; i++) {
+    container += `
+  <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn" data-aos="fade-up" id="meal-card">
+    <div class="card">
+      <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
+        <h5 class="text-white meal-name">${meals.recipes[i].title}</h5>
+      </div>
+      <img src="${meals.recipes[i].image_url}" class="card-img-top" alt="Meal">
+    </div>
+    </div>
+    `;
+  }
+  mealContainer.innerHTML = container;
+}
+
+/*
+==================================
+- Search For Meal
+==================================
+*/
+
+let searchInput = document.getElementById("searchInput"),
+  searchBtn = document.getElementById("searchBtn");
+
+searchInput.addEventListener("input", function (e) {
+  let txt = searchInput.value;
+  console.log(txt);
+  getAllMeals(txt);
+});
+
+let items = [
+  "carrot",
+  "broccoli",
+  "asparagus",
+  "cauliflower",
+  "corn",
+  "cucumber",
+  "green pepper",
+  "lettuce",
+  "mushrooms",
+  "onion",
+  "potato",
+  "pumpkin",
+  "red pepper",
+  "tomato",
+  "beetroot",
+  "brussel sprouts",
+  "peas",
+  "zucchini",
+  "radish",
+  "sweet potato",
+  "artichoke",
+  "leek",
+  "cabbage",
+  "celery",
+  "chili",
+  "garlic",
+  "basil",
+  "coriander",
+  "parsley",
+  "dill",
+  "rosemary",
+  "oregano",
+  "cinnamon",
+  "saffron",
+  "green bean",
+  "bean",
+  "chickpea",
+  "lentil",
+  "apple",
+  "apricot",
+  "avocado",
+  "banana",
+  "blackberry",
+  "blackcurrant",
+  "blueberry",
+  "boysenberry",
+  "cherry",
+  "coconut",
+  "fig",
+  "grape",
+  "grapefruit",
+  "kiwifruit",
+  "lemon",
+  "lime",
+  "lychee",
+  "mandarin",
+  "mango",
+  "melon",
+  "nectarine",
+  "orange",
+  "papaya",
+  "passion fruit",
+  "peach",
+  "pear",
+  "pineapple",
+  "plum",
+  "pomegranate",
+  "quince",
+  "raspberry",
+  "strawberry",
+  "watermelon",
+  "salad",
+  "pizza",
+  "pasta",
+  "popcorn",
+  "lobster",
+  "steak",
+  "bbq",
+  "pudding",
+  "hamburger",
+  "pie",
+  "cake",
+  "sausage",
+  "tacos",
+  "kebab",
+  "poutine",
+  "seafood",
+  "chips",
+  "fries",
+  "masala",
+  "paella",
+  "som tam",
+  "chicken",
+  "toast",
+  "marzipan",
+  "tofu",
+  "ketchup",
+  "hummus",
+  "chili",
+  "maple syrup",
+  "parma ham",
+  "fajitas",
+  "champ",
+  "lasagna",
+  "poke",
+  "chocolate",
+  "croissant",
+  "arepas",
+  "bunny chow",
+  "pierogi",
+  "donuts",
+  "rendang",
+  "sushi",
+  "ice cream",
+  "duck",
+  "curry",
+  "beef",
+  "goat",
+  "lamb",
+  "turkey",
+  "pork",
+  "fish",
+  "crab",
+  "bacon",
+  "ham",
+  "pepperoni",
+  "salami",
+  "ribs",
+];
+let options = ``;
+for (let i = 0; i < items.length; i++) {
+  options += `
+  <option value="${items[i]}">
+  `;
+}
+document.getElementById("foodList").innerHTML = options;

@@ -45,19 +45,13 @@
 
   <div class="container mt-5 pt-5">
     <div class="text-center my-4" data-aos="fade-up">
-      <input type="search" class="form-control mb-3 search-input" placeholder="Search for meals...">
-      <button class="btn btn-primary btn-lg">Submit</button>
+      <input list="foodList" id="searchInput" type="search" autocomplete="off" class="form-control mb-3 search-input" placeholder="Search for meals...">
+      <datalist id="foodList">
+      </datalist>
+      <button id="searchBtn" class="btn btn-primary btn-lg">Submit</button>
     </div>
 
     <div id="mealContainer" class="row">
-      <!-- <div class="col-md-6 col-lg-4 mb-4 animate__animated animate__zoomIn" data-aos="fade-up" id="meal-card">
-        <div class="card">
-          <div class="card-img-overlay text-center d-flex flex-column justify-content-end overlay">
-            <h5 id="mealName" class="text-white meal-name">Meal Name</h5>
-          </div>
-          <img id="mealImage" src="images/post-1.jpg" class="card-img-top" alt="Meal">
-        </div>
-      </div> -->
     </div>
   </div>
 
