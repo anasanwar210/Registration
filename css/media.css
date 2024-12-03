@@ -3,17 +3,18 @@
     top: -80%;
     right: 0%;
     margin: 0 !important;
-    /* transform: translate(-50%,-50%); */
     width: 100%;
     z-index: 9;
-    /* margin-right: 10px; */
   }
   #signUpEmailValidateMsg:after {
     bottom: 0%;
     display: none;
-    /* transform: translate(-100%, -50%); */
-    /* margin-left: 5px; */
-    /* border-top: 10px transparent solid; */
-    /* border-left: 10px var(--toggle-btn-color-lt) solid; */
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .container{
+    width: 85% !important;
+    margin: auto;
   }
 }

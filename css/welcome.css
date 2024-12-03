@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .navbar {
@@ -68,8 +68,12 @@ body {
 
 @media (max-width: 768px) {
   .search-input {
-      width: 90%;
+    width: 90%;
   }
+}
+
+.toggle-container{
+  user-select: none;
 }
 
 .sun {
@@ -85,7 +89,6 @@ body {
 body.dark-mode .sun {
   opacity: 0;
   transform: translateX(-20px);
-  
 }
 
 body.dark-mode .moon {
@@ -146,45 +149,29 @@ body.dark-mode .moon {
   }
 }
 
-/* styles.css */
-/* body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
-
-/* .datalist-container {
-  background: #fff;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  text-align: center;
+ul.main {
+  position: relative;
 }
 
-label {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333;
+ul.main > li > img {
+  cursor: pointer;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
+ul.nested {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #6c5ce7;
+  animation: fadeIn 0.5s;
 }
 
-input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-} */
+@keyframes fadeIn {
+  from {
+    height: 0;
+    scale: 0;
+  }
+  to {
+    height: auto;
+    scale: 1;
+  }
+}

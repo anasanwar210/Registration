@@ -9,33 +9,52 @@
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="css/media.css">
   <title>Meals</title>
 </head>
 
 <body>
   <div id="loading-screen">
     <span class="spinner"></span>
-</div>
+  </div>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top animate__animated animate__fadeInDown">
-    <div class="container">
+    <div class="container gx-0">
       <div class="row w-100">
-        <div class="inner col-md-12 d-flex justify-content-between align-items-center">
-          <a class="navbar-brand font-weight-bold" href="#">Meals</a>
-          <div class="toggle-container overflow-hidden">
-            <div class="toggle bg-dark rounded px-2" onclick="toggleMode()">
-              <span class="icon sun"><i class="fa-regular fa-moon text-warning"></i></span>
-              <span class="icon moon"><i class="fa-solid fa-sun text-warning"></i></span>
+        <div class="col-md-12">
+          <div class="inner d-flex justify-content-between align-items-center">
+            <a class="navbar-brand font-weight-bold" href="#">Meals</a>
+            <div class="toggle-container overflow-hidden">
+              <div class="toggle bg-dark rounded px-2" onclick="toggleMode()">
+                <span class="icon sun"><i class="fa-regular fa-moon text-warning"></i></span>
+                <span class="icon moon"><i class="fa-solid fa-sun text-warning"></i></span>
+              </div>
             </div>
-          </div>
-          <div id="info-btn" class="col-md-3 gap-3 d-flex justify-content-between align-items-center">
-            <div class="col-md-9 gap-2 d-flex align-items-center text-center">
-              <img src="images/Bassem_Samra.png" alt="User" class="user-img">
-              <p class="user d-flex align-items-center flex-column text-white mb-0">
-                <span>Hi, <span class="userName">anasanwar210</span></span>
-              </p>
+            <div id="info-btn" class="col-md-3 d-flex justify-content-center align-items-center">
+              <ul class="main list-unstyled mb-0 text-center">
+                <li>
+                  <img src="images/Bassem_Samra.png" alt="User" class="user-img">
+                  <ul class="nested d-none list-unstyled mb-0 bg-primary rounded-2 p-1">
+                    <li>
+                      <p class="user p-2 d-flex justify-content-center align-items-center flex-column text-white mb-0">
+                        <span>Hi,</span><span class="userName"></span>
+                      </p>
+                    </li>
+                    <li>
+                      <button id="signOut" class="btn btn-danger btn-sm w-50"><i
+                          class="fa-solid fa-sign-out"></i></button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <!-- <div class="col-md-9 gap-2 d-flex align-items-center text-center">
+      <img src="images/Bassem_Samra.png" alt="User" class="user-img">
+      <p class="user d-flex align-items-center flex-column text-white mb-0">
+        <span>Hi, <span class="userName">anasanwar210</span></span>
+      </p>
+    </div>
+    <button id="signOut" class="btn btn-danger btn-sm"><i class="fa-solid fa-sign-out"></i></button> -->
             </div>
-            <button id="signOut" class="btn btn-danger btn-sm"><i class="fa-solid fa-sign-out"></i></button>
           </div>
         </div>
       </div>
@@ -44,7 +63,8 @@
 
   <div class="container mt-5 pt-5">
     <div class="text-center my-4" data-aos="fade-up">
-      <input list="foodList" id="searchInput" type="search" autocomplete="off" class="form-control mb-3 search-input" placeholder="Search for meals...">
+      <input list="foodList" id="searchInput" type="search" autocomplete="off" class="form-control mb-3 search-input"
+        placeholder="Search for meals...">
       <datalist id="foodList">
       </datalist>
     </div>

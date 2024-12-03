@@ -57,6 +57,17 @@ function toggleMode() {
   document.body.classList.toggle("light-mode");
 }
 
+document.querySelector("ul.main").addEventListener("mouseenter" , function(e){
+  console.log(e.target.tagName);
+  document.querySelector("ul.nested").classList.replace("d-none" , "d-block")
+})
+document.querySelector("ul.main").addEventListener("mouseleave" , function(e){
+setTimeout(() => {
+  document.querySelector("ul.nested").classList.replace("d-block" , "d-none")
+  
+}, 1000);
+})
+
 /*
 ==================================
 - Get Meals From Api
